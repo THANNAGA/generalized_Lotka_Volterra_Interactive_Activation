@@ -91,6 +91,5 @@ $$
 L(x) = -r^T x - \frac{1}{2} x^T M x - \frac{1}{2} r^T M^{-1} r
 $$
 
-*All models and analyses can be found in the notebook gLIA_ODE.ipynb*
-
-https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb
+*All models and analyses can be found in the notebook gLIA_ODE.ipynb*  
+[gLIA_ODE.ipynb](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
