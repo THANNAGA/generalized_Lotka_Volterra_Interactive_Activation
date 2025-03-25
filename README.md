@@ -1,15 +1,14 @@
-# gLIA: Generalized Lotka-Volterra Interactive Activation Model
+# Training the Generalized Lotka-Volterra Interactive Activation Model
 
 <div style="width: 80%; overflow: hidden; margin-left: 10%; margin-right: 10%;">
   <img src="figures/state_evolution_gLIA.png" alt="Projected state evolution x Lyapunov value" style="width: 100%;">
 </div>
 
 ## Overview
-This repository contains the implementation and analysis of the **gLIA** model, a hybrid of the **Interactive Activation (IA)** framework and the **Generalized Lotka-Volterra (gLV)** model. Both are first-order, autonomous, quadratic (or quasi-quadratic) ordinary differential equations (ODEs), but IA's peculiarities make it analytically challenging. This study explores whether a gLV-endowed IA model can be trained effectively and compares its performance to an IA baseline on a simple word recognition task, evaluating classification accuracy and robustness.
+This repository contains the implementation to train the **gLIA** model, a hybrid of the **Interactive Activation (IA)** framework and the **Generalized Lotka-Volterra (gLV)** model. Both are first-order, autonomous, quadratic ordinary differential equations (ODEs), but IA's peculiarities make it analytically challenging. This study explores whether a gLV-endowed IA model can be trained effectively and compares its performance to an IA baseline on a simple word recognition task, evaluating classification accuracy and robustness. Training relies on the excellent [TorchDiffEq PyTorch library](https://github.com/rtqichen/torchdiffeq).
 
-*All models and analyses can be found in the notebook gLIA_ODE.ipynb*
-
-https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb
+*All models and analyses can be found in the notebook gLIA_ODE.ipynb*  
+[gLIA_ODE.ipynb](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
 
 
 ## Purpose
