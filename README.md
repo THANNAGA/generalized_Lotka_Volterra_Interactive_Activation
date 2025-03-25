@@ -22,7 +22,7 @@ x_{i}^{t+1} =
 \end{cases}
 $$
 
-where \( $\text{net}_i^t = \sum_{j \neq i}M_{ij}$ \text{ReLU}$(x_j^t)$ \), and \( $d_i > 0 $\) is a decay term. Equilibrium is:
+where \( $net_i^t = \sum_{j \neq i}M_{ij}$ ReLU(x_j^t)$ \), and \( $d_i > 0 $\) is a decay term. Equilibrium is:
 
 $ x_i^* = \frac{1 + d_i}{\sum_{j \neq i} M_{ij}$ \text{ReLU}$(x_j^*)}$ \quad (\text{if } $\text{net}_i^* > 0) $
 
