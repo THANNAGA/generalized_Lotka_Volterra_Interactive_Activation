@@ -24,9 +24,7 @@ $$
 
 where \( \text{net}_i^t = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j^t) \), and \( d_i > 0 \) is a decay term. Equilibrium is:
 
-$$
-x_i^* = \frac{1 + d_i}{\sum_{j \neq i} M_{ij} \text{ReLU}(x_j^*)} \quad (\text{if } \text{net}_i^* > 0)
-$$
+$$ x_i^* = \frac{1 + d_i}{\sum_{j \neq i} M_{ij} \text{ReLU}(x_j^*)} \quad (\text{if } \text{net}_i^* > 0) $$
 
 **Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
 
