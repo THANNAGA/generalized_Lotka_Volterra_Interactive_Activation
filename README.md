@@ -8,6 +8,7 @@
 This repository contains the implementation and analysis of the **gLIA** model, a hybrid of the **Interactive Activation (IA)** framework and the **Generalized Lotka-Volterra (gLV)** model. Both are first-order, autonomous, quadratic (or quasi-quadratic) ordinary differential equations (ODEs), but IA's peculiarities make it analytically challenging. This study explores whether a gLV-endowed IA model can be trained effectively and compares its performance to an IA baseline on a simple word recognition task, evaluating classification accuracy and robustness.
 
 *All models and analyses can be found in the notebook gLIA_ODE.ipynb*
+
 https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb
 
 
@@ -92,4 +93,5 @@ L(x) = -r^T x - \frac{1}{2} x^T M x - \frac{1}{2} r^T M^{-1} r
 $$
 
 *All models and analyses can be found in the notebook gLIA_ODE.ipynb*
+
 https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb
