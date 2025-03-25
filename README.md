@@ -1,4 +1,4 @@
-# Training the Generalized Lotka-Volterra Interactive Activation Model
+# Training the generalized Lotka-Volterra Interactive Activation Model
 
 [![paper](https://img.shields.io/badge/paper-PDF-B31B1B.svg)](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/Lotka_Volterra_and_Interactive_Activation_March_2025.pdf)
 [![Colab Notebook](https://img.shields.io/badge/colab%20notebook-3.10+-blue.svg)](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
@@ -9,7 +9,7 @@
 </div>
 
 ## Overview
-This repository contains the implementation to train the **gLIA** model, a hybrid of the **Interactive Activation (IA)** framework and the **Generalized Lotka-Volterra (gLV)** model. Both are first-order, autonomous, quadratic ordinary differential equations (ODEs), but IA's peculiarities make it analytically challenging. This study explores whether a gLV-endowed IA model can be trained effectively and compares its performance to an IA baseline on a simple word recognition task, evaluating classification accuracy and robustness. Training relies on the excellent [TorchDiffEq PyTorch library](https://github.com/rtqichen/torchdiffeq).
+This repository contains the implementation to train the **gLIA** model, a hybrid of the **Interactive Activation (IA)** and **Generalized Lotka-Volterra (gLV)** models. Both are first-order, autonomous, quadratic ordinary differential equations (ODEs), but IA's peculiarities make it analytically challenging. This study explores whether a gLV-endowed IA model can be trained effectively and compares its performance to an IA baseline on a simple word recognition task, evaluating classification accuracy and robustness. Training relies on the excellent [TorchDiffEq PyTorch library](https://github.com/rtqichen/torchdiffeq).
 
 *All models and analyses can be found in the notebook [gLIA_ODE.ipynb](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
 
@@ -39,7 +39,7 @@ where (net<sub>i</sub><sup>t</sup> = &sum;<sub>j ≠ i</sub> M<sub>ij</sub> ReLU
 **Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
 
 ### Generalized Lotka-Volterra (gLV)
-Rooted in ecology (Lotka, 1920; Volterra, 1926), gLV models population dynamics with cooperation and competition:
+Rooted in theoretical ecology (Lotka, 1920; Volterra, 1926), gLV models population dynamics with cooperation and competition:
 
 $$
 \frac{dx}{dt} = D(x)(r + Mx)
