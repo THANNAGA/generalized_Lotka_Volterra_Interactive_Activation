@@ -1,5 +1,8 @@
 # gLIA: Generalized Lotka-Volterra Interactive Activation Model
 
+
+![Projected state evolution x Lyapunov value](generalized_Lotka_Volterra_Interactive_Activation/figures/state_evolution_gLIA.png)
+
 ## Overview
 This repository contains the implementation and analysis of the **gLIA** model, a hybrid of the **Interactive Activation (IA)** framework and the **Generalized Lotka-Volterra (gLV)** model. Both are first-order, autonomous, quadratic (or quasi-quadratic) ordinary differential equations (ODEs), but IA's peculiarities make it analytically challenging. This study explores whether a gLV-endowed IA model can be trained effectively and compares its performance to an IA baseline on a simple word recognition task, evaluating classification accuracy and robustness.
 
