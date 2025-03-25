@@ -12,19 +12,22 @@ The goal is to:
 ## Models
 
 ### Interactive Activation (IA)
-Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix \( M \). A key feature is **sign-symmetry**: \( $\text{sign}(M_{ij}) = \text{sign}(M_{ji}) $\), enabling cooperation or competition. The dynamics are:
+Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix \( M \). A key feature is **sign-symmetry**: 
+
+(sign(M<sub>ij</sub>) = sign(M<sub>ji</sub>)), enabling cooperation or competition. The dynamics are:
 
 $$
-x_{i}^{t+1} =
-\begin{cases} 
-(1 - d_i)x_i^t + \text{net}_i^t (1 - x_i^t) & \text{if } \text{net}_i^t > 0 \\
-(1 - d_i)x_i^t + \text{net}_i^t x_i^t & \text{if } \text{net}_i^t \leq 0 
+x_i^{t+1} = \begin{cases}
+(1 - d_i) x_i^t + \text{net}_i^t (1 - x_i^t) & \text{if } \text{net}_i^t > 0 \\
+(1 - d_i) x_i^t + \text{net}_i^t x_i^t & \text{if } \text{net}_i^t \le 0
 \end{cases}
 $$
 
-where \($net_i^t = \sum_{j \neq i}M_{ij} ReLU$ (x_j^t)$\), and \$d_i > 0 $\ is a decay term. Equilibrium is:
+where (net<sub>i</sub><sup>t</sup> = &sum;<sub>j ≠ i</sub> M<sub>ij</sub> ReLU(x<sub>j</sub><sup>t</sup>)), and d<sub>i</sub> > 0 is a decay term. Equilibrium is:
 
-$ x_i^* = \frac{1 + d_i}{\sum_{j \neq i} M_{ij}$ \text{ReLU}$(x_j^*)}$ \quad (\text{if } $\text{net}_i^* > 0) $
+$$
+x_i^* = \frac{1 + d_i}{\sum_{j \neq i} M_{ij} \text{ReLU}(x_j^*)} \quad (\text{if } \text{net}_i^* > 0)
+$$
 
 **Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
 
