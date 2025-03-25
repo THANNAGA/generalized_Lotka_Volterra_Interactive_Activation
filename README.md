@@ -23,9 +23,7 @@ x_i^{t+1} = \begin{cases}
 \end{cases}
 $$
 
-where (net<sub>i</sub><sup>t</sup> = &sum;<sub>j ≠ i</sub> M<sub>ij</sub> ReLU(x<sub>j</sub><sup>t</sup>)), and d<sub>i</sub> > 0 is a decay term. Equilibrium is:
-
-$$ x_i^* = \frac{1 + d_i}{\sum_{j \neq i} M_{ij} \text{ReLU}(x_j^*)} \quad (\text{if } \text{net}_i^* > 0) $$
+where (net<sub>i</sub><sup>t</sup> = &sum;<sub>j ≠ i</sub> M<sub>ij</sub> ReLU(x<sub>j</sub><sup>t</sup>)), and d<sub>i</sub> > 0 is a decay term. 
 
 **Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
 
