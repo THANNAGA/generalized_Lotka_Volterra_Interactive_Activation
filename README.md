@@ -12,7 +12,7 @@ The goal is to:
 ## Models
 
 ### Interactive Activation (IA)
-Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix \( M \). A key feature is **sign-symmetry**: \ $\text{sign}(M_{ij}) = \text{sign}(M_{ji}) $\, enabling cooperation or competition. The dynamics are:
+Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix \( M \). A key feature is **sign-symmetry**: \( $\text{sign}(M_{ij}) = \text{sign}(M_{ji}) $\), enabling cooperation or competition. The dynamics are:
 
 $$
 x_{i}^{t+1} =
