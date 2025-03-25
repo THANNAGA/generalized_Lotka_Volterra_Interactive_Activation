@@ -1,5 +1,8 @@
 # Training the Generalized Lotka-Volterra Interactive Activation Model
 
+[![paper](https://img.shields.io/badge/DOI-10.48550/arXiv.2410.02536-B31B1B.svg)]([https://doi.org/10.48550/arXiv.2410.02536](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/Lotka_Volterra_and_Interactive_Activation_March_2025.pdf))
+[![Notebook](https://img.shields.io/badge/python-3.10+-blue.svg)](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
+
 <div style="width: 80%; overflow: hidden; margin-left: 10%; margin-right: 10%;">
   <img src="figures/state_evolution_gLIA.png" alt="Projected state evolution x Lyapunov value" style="width: 100%;">
 </div>
