@@ -45,7 +45,7 @@ $$
 \frac{dx}{dt} = D(x)(r + Mx)
 $$
 
-where \( D(x) \) is a diagonal matrix of \( x \), \( r \) is the growth rate vector, and \( M \) is the interaction matrix. A feasible equilibrium (if \( M \) is invertible) is \( $x^* = -M^{-1}r$ \). gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable, enabling gradient-based training.
+where $D(x)$ is a diagonal matrix of $x$, $r$ is the growth rate vector, and $M$ is the interaction matrix. A feasible equilibrium (if $M$ is invertible) is \( $x^* = -M^{-1}r$ \). gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable, enabling gradient-based training.
 
 ### gLIA: Combining IA and gLV
 gLIA uses gLV dynamics with IA's sign-symmetry constraint: \( $\text{sign}(m_{ij}) = \text{sign}(m_{ji})$ \). It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
@@ -66,11 +66,11 @@ Using the **adjoint method** (Chen et al., 2018), we train gLIA as a dynamical c
 Four models are compared:
 1. **gLIA**: Unconstrained interaction matrix.
 2. **gLIA Symmetric**: Enforces $M = M^T$.
-3. **gLIA Negative Definite**: Ensures \( M \) has negative eigenvalues.
+3. **gLIA Negative Definite**: Ensures $M$ has negative eigenvalues.
 4. **IA**: Baseline with original dynamics.
 
 ### Stability
-gLIA stability depends on \( M \) and \( r \). We regularize \( M \) to keep eigenvalues negative, ensuring bounded dynamics without IA's dual equations.
+gLIA stability depends on $M$ and $r$. We regularize $M$ to keep eigenvalues as negative as possible, aiming at bounded dynamics even in absence of IA's dual equations.
 
 ## Results
 Test accuracies (Table 1) show gLIA outperforms IA:
@@ -88,7 +88,7 @@ Test accuracies (Table 1) show gLIA outperforms IA:
 - **Key Findings**:
   - gLIA scales to 1,000 words, with symmetric and negative definite variants outperforming others.
   - IA degrades significantly beyond 200 words.
-  - Symmetric gLIA with negative definite \( M \) is globally stable, admitting a Lyapunov function:
+  - Symmetric gLIA with negative definite $M$ is globally stable, admitting a Lyapunov function:
 
 $$
 L(x) = -r^T x - \frac{1}{2} x^T M x - \frac{1}{2} r^T M^{-1} r
