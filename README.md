@@ -65,7 +65,7 @@ Using the **adjoint method** (Chen et al., 2018), we train gLIA as a dynamical c
 
 Four models are compared:
 1. **gLIA**: Unconstrained interaction matrix.
-2. **gLIA Symmetric**: Enforces \ $M = M^T$ \.
+2. **gLIA Symmetric**: Enforces $M = M^T$.
 3. **gLIA Negative Definite**: Ensures \( M \) has negative eigenvalues.
 4. **IA**: Baseline with original dynamics.
 
