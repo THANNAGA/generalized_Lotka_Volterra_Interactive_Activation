@@ -1,8 +1,8 @@
 # Training the generalized Lotka-Volterra Interactive Activation Model
 
 [![paper](https://img.shields.io/badge/paper-PDF-B31B1B.svg)](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/Lotka_Volterra_and_Interactive_Activation_March_2025.pdf)
-[![Colab Notebook - continuous](https://img.shields.io/badge/colab%20notebook-3.10+-blue.svg)](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
-[![Colab Notebook - discrete](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb)
+[![Colab Notebook continuous](https://img.shields.io/badge/colab%20notebook-3.10+-blue.svg)](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
+[![Colab Notebook discrete](https://img.shields.io/badge/colab%20notebook-3.10+-blue.svg)](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <div style="width: 80%; overflow: hidden; margin-left: 10%; margin-right: 10%;">
