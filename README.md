@@ -1,8 +1,8 @@
 # Training the generalized Lotka-Volterra Interactive Activation Model
 
 [![paper](https://img.shields.io/badge/paper-PDF-B31B1B.svg)](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/Lotka_Volterra_and_Interactive_Activation_March_2025.pdf)
-[![Colab continuous](https://img.shields.io/badge/colab%20notebook-3.10+-blue.svg)](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
-[![Colab discrete](https://img.shields.io/badge/colab%20notebook-3.10+-blue.svg)](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb)
+[![Colab Continuous](https://img.shields.io/badge/Colab%20Continuous-3.10+-blue.svg)](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
+[![Colab Discrete](https://img.shields.io/badge/Colab%20Discrete-3.10+-blue.svg)](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <div style="width: 80%; overflow: hidden; margin-left: 10%; margin-right: 10%;">
@@ -24,10 +24,10 @@ The goal is to:
 ## Models
 
 ### Interactive Activation (IA)
-Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix $M$. A key feature is **sign-symmetry**: 
+Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix \(M\). A key feature is **sign-symmetry**: 
 
 $$
-sign(M<sub>ij</sub>) = sign(M<sub>ji</sub>)
+\text{sign}(M_{ij}) = \text{sign}(M_{ji})
 $$
 
 enabling cooperation or competition. The dynamics are:
@@ -39,9 +39,9 @@ x_i^{t+1} = \begin{cases}
 \end{cases}
 $$
 
-where net<sub>i</sub><sup>t</sup> = &sum;<sub>j ≠ i</sub> M<sub>ij</sub> ReLU(x<sub>j</sub><sup>t</sup>), and d<sub>i</sub> > 0 is a decay term. 
+where \(\text{net}_i^t = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j^t)\), and \(d_i > 0\) is a decay term. 
 
-The AI equations can also be written down in continuous-time form as a differential equation:
+The IA equations can also be written in continuous-time form as a differential equation:
 
 $$
 \frac{dx_i}{dt} = \begin{cases} 
@@ -50,7 +50,7 @@ $$
 \end{cases}
 $$
 
-Here, $x_i(t)$ represents the state variable as a function of continuous time $t$, and $\text{net}_i(t)$ is the input at time $t$.
+Here, \(x_i(t)\) represents the state variable as a function of continuous time \(t\), and \(\text{net}_i(t) = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j(t))\).
 
 **Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
 
@@ -61,7 +61,7 @@ $$
 \frac{dx}{dt} = D(x)(r + Mx)
 $$
 
-where $D(x)$ is a diagonal matrix of $x$, $r$ is the growth rate vector, and $M$ is the interaction matrix. A feasible equilibrium, when $M$ is invertible, is $x^* = -M^{-1}r$. gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable.
+where \(D(x)\) is a diagonal matrix of \(x\), \(r\) is the growth rate vector, and \(M\) is the interaction matrix. A feasible equilibrium, when \(M\) is invertible, is \(x^* = -M^{-1}r\). gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable.
 
 gLV can also be written in discrete-time equations:
 
@@ -70,13 +70,13 @@ x^{t+1} = x^t + \Delta t \cdot D(x^t) (r + M x^t)
 $$
 
 Where:
-- $x^t$ is the state variable at discrete time step $t$,
-- $Delta t$ is the time step size,
-- $D(x^t)$ is a function of $x$ evaluated at $x^t$,
-- $r$ and $M$ are constants or parameters.
+- \(x^t\) is the state variable at discrete time step \(t\),
+- \(\Delta t\) is the time step size,
+- \(D(x^t)\) is a function of \(x\) evaluated at \(x^t\),
+- \(r\) and \(M\) are constants or parameters.
 
 ### gLIA: Combining IA and gLV
-gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\text{sign}(m_{ij}) = \text{sign}(m_{ji})$. It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
+gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: \(\text{sign}(M_{ij}) = \text{sign}(M_{ji})\). It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
 
 ## Methods
 
@@ -93,12 +93,12 @@ Using the **adjoint method** (Chen et al., 2018), we train gLIA as a dynamical c
 
 Four models are compared:
 1. **gLIA**: Unconstrained interaction matrix.
-2. **gLIA Symmetric**: Enforces $M = M^T$.
-3. **gLIA Negative Definite**: Ensures $M$ has negative eigenvalues.
+2. **gLIA Symmetric**: Enforces \(M = M^T\).
+3. **gLIA Negative Definite**: Ensures \(M\) has negative eigenvalues.
 4. **IA**: Baseline with original dynamics.
 
 ### Stability
-gLIA stability depends on $M$ and $r$. We regularize $M$ to keep eigenvalues as negative as possible, aiming at bounded dynamics even in absence of IA's dual equations.
+gLIA stability depends on \(M\) and \(r\). We regularize \(M\) to keep eigenvalues as negative as possible, aiming at bounded dynamics even in absence of IA's dual equations.
 
 ## Results: continuous case
 Test accuracies (Table 1) show gLIA outperforms IA:
@@ -118,7 +118,7 @@ Test accuracies (Table 1) show gLIA outperforms IA:
 - **Key Findings**:
   - gLIA scales to 1,000 words, with symmetric and negative definite variants outperforming others.
   - IA degrades significantly beyond 200 words.
-  - Symmetric gLIA with negative definite $M$ is globally stable, admitting a Lyapunov function:
+  - Symmetric gLIA with negative definite \(M\) is globally stable, admitting a Lyapunov function:
 
 $$
 L(x) = -r^T x - \frac{1}{2} x^T M x - \frac{1}{2} r^T M^{-1} r
