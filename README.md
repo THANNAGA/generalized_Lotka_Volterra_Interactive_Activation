@@ -36,6 +36,17 @@ $$
 
 where (net<sub>i</sub><sup>t</sup> = &sum;<sub>j ≠ i</sub> M<sub>ij</sub> ReLU(x<sub>j</sub><sup>t</sup>)), and d<sub>i</sub> > 0 is a decay term. 
 
+The AI equations can also be written down in continuous-time form as a differential equation:
+
+$$
+\frac{dx_i}{dt} = \begin{cases} 
+-d_i x_i(t) + \text{net}_i(t) (1 - x_i(t)) & \text{if } \text{net}_i(t) > 0 \\
+-d_i x_i(t) + \text{net}_i(t) x_i(t) & \text{if } \text{net}_i(t) \le 0 
+\end{cases}
+$$
+
+Here, $x_i(t)$ represents the state variable as a function of continuous time $t$, and $\text{net}_i(t)$ is the input at time $t$.
+
 **Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
 
 ### Generalized Lotka-Volterra (gLV)
