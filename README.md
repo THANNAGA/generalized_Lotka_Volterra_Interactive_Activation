@@ -23,7 +23,7 @@ The goal is to:
 ## Models
 
 ### Interactive Activation (IA)
-Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix \( M \). A key feature is **sign-symmetry**: 
+Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix $M$. A key feature is **sign-symmetry**: 
 
 (sign(M<sub>ij</sub>) = sign(M<sub>ji</sub>)), enabling cooperation or competition. The dynamics are:
 
@@ -45,10 +45,10 @@ $$
 \frac{dx}{dt} = D(x)(r + Mx)
 $$
 
-where $D(x)$ is a diagonal matrix of $x$, $r$ is the growth rate vector, and $M$ is the interaction matrix. A feasible equilibrium (if $M$ is invertible) is \( $x^* = -M^{-1}r$ \). gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable, enabling gradient-based training.
+where $D(x)$ is a diagonal matrix of $x$, $r$ is the growth rate vector, and $M$ is the interaction matrix. A feasible equilibrium, when $M$ is invertible, is $x^* = -M^{-1}r$. gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable.
 
 ### gLIA: Combining IA and gLV
-gLIA uses gLV dynamics with IA's sign-symmetry constraint: \( $\text{sign}(m_{ij}) = \text{sign}(m_{ji})$ \). It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
+gLIA uses gLV dynamics with IA's sign-symmetry constraint: $\text{sign}(m_{ij}) = \text{sign}(m_{ji})$. It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
 
 ## Methods
 
