@@ -64,16 +64,16 @@ $$
 where $D(x)$ is a diagonal matrix of $x$, $r$ is the growth rate vector, and $M$ is the interaction matrix. A feasible equilibrium, when $M$ is invertible, is $x^* = -M^{-1}r$. gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable.
 
 gLV can also be written in discrete-time equations:
-$$
 
+$$
 x^{t+1} = x^t + \Delta t \cdot D(x^t) (r + M x^t)
 $$
 
 Where:
-- \(x^t\) is the state variable at discrete time step \(t\),
-- \(\Delta t\) is the time step size,
-- \(D(x^t)\) is a function of \(x\) evaluated at \(x^t\),
-- \(r\) and \(M\) are constants or parameters.
+- $x^t$ is the state variable at discrete time step $t$,
+- $Delta t$ is the time step size,
+- $D(x^t)$ is a function of $x$ evaluated at $x^t$,
+- $r$ and $M$ are constants or parameters.
 
 ### gLIA: Combining IA and gLV
 gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\text{sign}(m_{ij}) = \text{sign}(m_{ji})$. It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
