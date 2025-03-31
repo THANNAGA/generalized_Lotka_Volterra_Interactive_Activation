@@ -50,7 +50,7 @@ $$
 \end{cases}
 $$
 
-Here, $x_i(t)$ represents the state variable as a function of continuous time $t$, and $\text{net}_i(t) = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j(t))$.
+Here, $x_i(t)$ represents the state variable as a function of continuous time $t$.
 
 **Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
 
@@ -93,12 +93,12 @@ Using the **adjoint method** (Chen et al., 2018), we train gLIA as a dynamical c
 
 Four models are compared:
 1. **gLIA**: Unconstrained interaction matrix.
-2. **gLIA Symmetric**: Enforces \(M = M^T\).
-3. **gLIA Negative Definite**: Ensures \(M\) has negative eigenvalues.
+2. **gLIA Symmetric**: Enforces $M = M^T$.
+3. **gLIA Negative Definite**: Ensures $M$ has negative eigenvalues.
 4. **IA**: Baseline with original dynamics.
 
 ### Stability
-gLIA stability depends on \(M\) and \(r\). We regularize \(M\) to keep eigenvalues as negative as possible, aiming at bounded dynamics even in absence of IA's dual equations.
+gLIA stability depends on $M$ and $r$. We regularize $M$ to keep eigenvalues as negative as possible, aiming at bounded dynamics even in absence of IA's dual equations.
 
 ## Results: continuous case
 Test accuracies (Table 1) show gLIA outperforms IA:
@@ -118,7 +118,7 @@ Test accuracies (Table 1) show gLIA outperforms IA:
 - **Key Findings**:
   - gLIA scales to 1,000 words, with symmetric and negative definite variants outperforming others.
   - IA degrades significantly beyond 200 words.
-  - Symmetric gLIA with negative definite \(M\) is globally stable, admitting a Lyapunov function:
+  - Symmetric gLIA with negative definite $M$ is globally stable, admitting a Lyapunov function:
 
 $$
 L(x) = -r^T x - \frac{1}{2} x^T M x - \frac{1}{2} r^T M^{-1} r
