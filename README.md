@@ -48,7 +48,7 @@ $$
 where $D(x)$ is a diagonal matrix of $x$, $r$ is the growth rate vector, and $M$ is the interaction matrix. A feasible equilibrium, when $M$ is invertible, is $x^* = -M^{-1}r$. gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable.
 
 ### gLIA: Combining IA and gLV
-gLIA uses gLV dynamics with IA's sign-symmetry constraint: $\text{sign}(m_{ij}) = \text{sign}(m_{ji})$. It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
+gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\text{sign}(m_{ij}) = \text{sign}(m_{ji})$. It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
 
 ## Methods
 
