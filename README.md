@@ -34,7 +34,7 @@ x_i^{t+1} = \begin{cases}
 \end{cases}
 $$
 
-where (net<sub>i</sub><sup>t</sup> = &sum;<sub>j ≠ i</sub> M<sub>ij</sub> ReLU(x<sub>j</sub><sup>t</sup>)), and d<sub>i</sub> > 0 is a decay term. 
+where net<sub>i</sub><sup>t</sup> = &sum;<sub>j ≠ i</sub> M<sub>ij</sub> ReLU(x<sub>j</sub><sup>t</sup>), and d<sub>i</sub> > 0 is a decay term. 
 
 The AI equations can also be written down in continuous-time form as a differential equation:
 
