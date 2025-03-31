@@ -24,7 +24,7 @@ The goal is to:
 ## Models
 
 ### Interactive Activation (IA)
-Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix \(M\). A key feature is **sign-symmetry**: 
+Introduced by McClelland and Rumelhart (1981), IA organizes units into levels with reciprocal interactions via a connectivity matrix $M$. A key feature is **sign-symmetry**: 
 
 $$
 \text{sign}(M_{ij}) = \text{sign}(M_{ji})
@@ -39,7 +39,7 @@ x_i^{t+1} = \begin{cases}
 \end{cases}
 $$
 
-where \(\text{net}_i^t = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j^t)\), and \(d_i > 0\) is a decay term. 
+where $\text{net}_i^t = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j^t)$, and $d_i > 0$ is a decay term. 
 
 The IA equations can also be written in continuous-time form as a differential equation:
 
@@ -50,7 +50,7 @@ $$
 \end{cases}
 $$
 
-Here, \(x_i(t)\) represents the state variable as a function of continuous time \(t\), and \(\text{net}_i(t) = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j(t))\).
+Here, $x_i(t)$ represents the state variable as a function of continuous time $t$, and $\text{net}_i(t) = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j(t))$.
 
 **Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
 
@@ -61,7 +61,7 @@ $$
 \frac{dx}{dt} = D(x)(r + Mx)
 $$
 
-where \(D(x)\) is a diagonal matrix of \(x\), \(r\) is the growth rate vector, and \(M\) is the interaction matrix. A feasible equilibrium, when \(M\) is invertible, is \(x^* = -M^{-1}r\). gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable.
+where $D(x)$ is a diagonal matrix of $x$, $r$ is the growth rate vector, and $M$ is the interaction matrix. A feasible equilibrium, when \(M\) is invertible, is $x^* = -M^{-1}r$. gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable.
 
 gLV can also be written in discrete-time equations:
 
@@ -70,13 +70,13 @@ x^{t+1} = x^t + \Delta t \cdot D(x^t) (r + M x^t)
 $$
 
 Where:
-- \(x^t\) is the state variable at discrete time step \(t\),
-- \(\Delta t\) is the time step size,
-- \(D(x^t)\) is a function of \(x\) evaluated at \(x^t\),
-- \(r\) and \(M\) are constants or parameters.
+- $x^t$ is the state variable at discrete time step $t$,
+- $\Delta t$ is the time step size,
+- $D(x^t)$ is a function of $x$ evaluated at $x^t$,
+- $r$ and $M$ are constants or parameters.
 
 ### gLIA: Combining IA and gLV
-gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: \(\text{sign}(M_{ij}) = \text{sign}(M_{ji})\). It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
+gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\text{sign}(M_{ij}) = \text{sign}(M_{ji})$. It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
 
 ## Methods
 
