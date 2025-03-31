@@ -85,6 +85,8 @@ Test accuracies (Table 1) show gLIA outperforms IA:
 | 500   | 500,000 | 708   | 501,264    | 251,586      | 36.94               | 89.88     | 89.74          | 5.66   |
 | 1000  | 1M      | 1157  | 1,338,149  | 669,903      | 20.41               | 91.69     | 90.34          | 0.30   |
 
+*Note: For "gLIA Sym." and "gLIA Neg. Def.", the number of parameters is calculated as n(n+1)/2, where n is the number of units.*
+
 - **Key Findings**:
   - gLIA scales to 1,000 words, with symmetric and negative definite variants outperforming others.
   - IA degrades significantly beyond 200 words.
@@ -93,5 +95,17 @@ Test accuracies (Table 1) show gLIA outperforms IA:
 $$
 L(x) = -r^T x - \frac{1}{2} x^T M x - \frac{1}{2} r^T M^{-1} r
 $$
+
+We also present results in the discrete case:
+
+| Words | Samples  | Epochs | Units | Parameters | Parameters n(n+1)/2 | Test Acc. (%) gLIA | Test Acc. (%) gLIA Sym. | Test Acc. (%) gLIA Neg. Def. | Test Acc. (%) IA |
+|-------|----------|--------|-------|------------|---------------------|---------------------|-------------------------|------------------------------|------------------|
+| 10    | 1,000    | 200    | 114   | 12,996     | 6,555               | 100.00              | 90.00                   | 89.33                        | 9.33             |
+| 20    | 2,000    | 200    | 144   | 20,736     | 10,440              | 99.83               | 61.17                   | 56.17                        | 4.33             |
+| 30    | 3,000    | 200    | 160   | 25,600     | 12,880              | 100.00              | 27.22                   | 19.22                        | 2.89             |
+| 100   | 10,000   | 200    | 181   | 32,761     | 16,471              | 99.97               | 78.33                   | 66.53                        | 0.97             |
+| 200   | 20,000   | 200    | 310   | 96,100     | 48,205              | 100.00              | 37.00                   | 10.13                        | 9.22             |
+| 500   | 500,000  | 200    | 708   | 501,264    | 251,586             | 99.97               | 0.02                    | 27.00                        | 59.95            |
+| 1000  | 1,000,000| 200    | 1157  | 1,338,149  | 669,903             | 99.66               | 2.05                    | 0.13                         | 0.10             |
 
 *All models and analyses can be found in the notebook* [gLIA_ODE.ipynb](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
