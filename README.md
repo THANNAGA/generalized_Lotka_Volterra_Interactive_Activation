@@ -75,7 +75,7 @@ gLIA stability depends on $M$ and $r$. We regularize $M$ to keep eigenvalues as 
 ## Results
 Test accuracies (Table 1) show gLIA outperforms IA:
 
-| Words | Samples | Units | Parameters | Params (Sym) | Test Acc. (%) gLIA | gLIA Sym. | gLIA Neg. Def. | IA   |
+| Words | Samples  | Units | Parameters | Parameters n(n+1)/2 | Test Acc. (%) gLIA | Test Acc. (%) gLIA Sym. | Test Acc. (%) gLIA Neg. Def. | Test Acc. (%) IA |
 |-------|---------|-------|------------|--------------|---------------------|-----------|----------------|------|
 | 10    | 1,000   | 114   | 12,996     | 6,555        | 100.00              | 100.00    | 100.00         | 100.00 |
 | 20    | 2,000   | 144   | 20,736     | 10,440       | 100.00              | 100.00    | 98.87          | 100.00 |
