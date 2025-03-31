@@ -96,7 +96,7 @@ $$
 L(x) = -r^T x - \frac{1}{2} x^T M x - \frac{1}{2} r^T M^{-1} r
 $$
 
-We also present results in the discrete case:
+We also present results in the discrete case, i.e. when the gLIA and IA equations are discretized:
 
 | Words | Samples  | Units | Parameters | Parameters n(n+1)/2 | Test Acc. (%) gLIA | Test Acc. (%) gLIA Sym. | Test Acc. (%) gLIA Neg. Def. | Test Acc. (%) IA |
 |-------|----------|-------|------------|---------------------|---------------------|-------------------------|------------------------------|------------------|
