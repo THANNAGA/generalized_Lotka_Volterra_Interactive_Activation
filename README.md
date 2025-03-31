@@ -1,7 +1,8 @@
 # Training the generalized Lotka-Volterra Interactive Activation Model
 
 [![paper](https://img.shields.io/badge/paper-PDF-B31B1B.svg)](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/Lotka_Volterra_and_Interactive_Activation_March_2025.pdf)
-[![Colab Notebook](https://img.shields.io/badge/colab%20notebook-3.10+-blue.svg)](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
+[![Colab Notebook - continuous](https://img.shields.io/badge/colab%20notebook-3.10+-blue.svg)](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
+[![Colab Notebook - discrete](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <div style="width: 80%; overflow: hidden; margin-left: 10%; margin-right: 10%;">
@@ -87,7 +88,7 @@ Four models are compared:
 ### Stability
 gLIA stability depends on $M$ and $r$. We regularize $M$ to keep eigenvalues as negative as possible, aiming at bounded dynamics even in absence of IA's dual equations.
 
-## Results
+## Results: continuous case
 Test accuracies (Table 1) show gLIA outperforms IA:
 
 | Words | Samples  | Units | Parameters | Parameters n(n+1)/2 | Test Acc. (%) gLIA | Test Acc. (%) gLIA Sym. | Test Acc. (%) gLIA Neg. Def. | Test Acc. (%) IA |
@@ -111,6 +112,10 @@ $$
 L(x) = -r^T x - \frac{1}{2} x^T M x - \frac{1}{2} r^T M^{-1} r
 $$
 
+*All models and analyses for the continuous case can be found in the notebook* [gLIA_ODE.ipynb](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
+
+## Results: discrete case
+
 We also present results in the discrete case, i.e. when the gLIA and IA equations are discretized:
 
 | Words | Samples  | Units | Parameters | Parameters n(n+1)/2 | Test Acc. (%) gLIA | Test Acc. (%) gLIA Sym. | Test Acc. (%) gLIA Neg. Def. | Test Acc. (%) IA |
@@ -123,4 +128,4 @@ We also present results in the discrete case, i.e. when the gLIA and IA equation
 | 500   | 500,000  | 708   | 501,264    | 251,586             | 99.97               | 0.02                    | 27.00                        | 59.95            |
 | 1000  | 1M       | 1157  | 1,338,149  | 669,903             | 99.66               | 2.05                    | 0.13                         | 0.10             |
 
-*All models and analyses can be found in the notebook* [gLIA_ODE.ipynb](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb)
+*All models and analyses for the discrete case can be found in the notebook* [gLIA_ODE.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb)
