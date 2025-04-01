@@ -39,7 +39,7 @@ x_i^{t+1} = \begin{cases}
 \end{cases}
 $$
 
-where $\text{net}_i^t = \sum_{j \neq i} M_{ij} \text{ReLU}(x_j^t)$, and $d_i > 0$ is a decay term. 
+where $net_i^t = Σ_{j ≠ i} M_{ij} * ReLU(x_j^t)$, and $d_i > 0$ is a decay term. 
 
 The IA equations can also be written in continuous-time form as a differential equation:
 
