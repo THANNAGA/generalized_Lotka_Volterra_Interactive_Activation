@@ -10,7 +10,7 @@
 </div>
 
 ## Overview
-This repository contains the implementation to train the **gLIA** model, a hybrid of the **Interactive Activation (IA)** and **Generalized Lotka-Volterra (gLV)** models. Both are first-order, autonomous, quadratic ordinary differential equations (ODEs), but IA's peculiarities make it analytically challenging. This study explores whether a gLV-endowed IA model can be trained effectively and compares its performance to an IA baseline on a simple word recognition task, evaluating classification accuracy and robustness. Training relies on the excellent [TorchDiffEq PyTorch library](https://github.com/rtqichen/torchdiffeq).
+This repository contains the implementation to train the **gLIA** model, a hybrid of the **Interactive Activation (IA)** and **Generalized Lotka-Volterra (gLV)** models. Both are first-order, autonomous, quadratic ordinary differential equations (ODEs), but IA's peculiarities make it analytically challenging. This study explores whether a gLV-endowed IA model can be trained effectively and compares its performance to an IA baseline on a simple word recognition task, evaluating classification accuracy and robustness. 
 
 *All models and analyses can be found in the notebook* [gLIA_ODE.ipynb](https://colab.research.google.com/github/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_ODE.ipynb) (continuous case) and [gLIA_discrete.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb) (discrete case)
 
@@ -84,7 +84,7 @@ gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\t
 We model a two-level lexical system (letters and words) for word recognition, using the "Google 10,000 English" dataset (words ≥ 3 letters). A word is recognized if its unit is the most active after 50 time steps given its constituent letters.
 
 ### Training
-Using the **adjoint method** (Chen et al., 2018), we train gLIA as a dynamical classifier:
+we train gLIA as a dynamical classifier:
 - **Input**: Letter-position vectors with Gaussian noise (100 samples/word).
 - **Target**: One-hot word vectors.
 - **Loss**: Mean Squared Error (MSE).
@@ -96,6 +96,9 @@ Four models are compared:
 2. **gLIA Symmetric**: Enforces $M = M^T$.
 3. **gLIA Negative Definite**: Ensures $M$ has negative eigenvalues.
 4. **IA**: Baseline with original dynamics.
+
+In the continuous case, training relies on the excellent [TorchDiffEq PyTorch library](https://github.com/rtqichen/torchdiffeq) using the **adjoint method** (Chen et al., 2018).
+In the discrete case, we use the standard Adam optimizer with a loss computed on the last state, as autograd automatically backpropagates across intermediate states.
 
 ### Stability
 gLIA stability depends on $M$ and $r$. We regularize $M$ to keep eigenvalues as negative as possible, aiming at bounded dynamics even in absence of IA's dual equations.
@@ -115,8 +118,8 @@ Test accuracies (Table 1) show gLIA outperforms IA:
 
 *Note: For "gLIA Sym." and "gLIA Neg. Def.", the number of parameters is calculated as n(n+1)/2, where n is the number of units.*
 
-- **Key Findings**:
-  - gLIA scales to 1,000 words, with symmetric and negative definite variants outperforming others.
+- **Key Findings - Continuous case**:
+  - gLIA scales to at least 1,000 words, with symmetric and negative definite variants outperforming others.
   - IA degrades significantly beyond 200 words.
   - Symmetric gLIA with negative definite $M$ is globally stable, admitting a Lyapunov function:
 
@@ -141,3 +144,8 @@ We also present results in the discrete case, i.e. when the gLIA and IA equation
 | 1000  | 1M       | 1157  | 1,338,149  | 669,903             | 99.66               | 2.05                    | 0.13                         | 0.10             |
 
 *All models and analyses for the discrete case can be found in the notebook* [gLIA_discrete.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb)
+
+- **Key Findings - Discrete case**:
+  - gLIA scales to at least 1,000 words, with symmetric and negative definite variants outperforming others.
+  - IA degrades significantly beyond 200 words.
+  - Symmetric gLIA with negative definite $M$ is globally stable, admitting a Lyapunov function:
