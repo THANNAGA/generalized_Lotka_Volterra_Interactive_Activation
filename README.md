@@ -63,7 +63,7 @@ $$
 
 where $D(x)$ is a diagonal matrix of $x$, $r$ is the growth rate vector, and $M$ is the interaction matrix. A feasible equilibrium, when \(M\) is invertible, is $x^* = -M^{-1}r$. gLV supports complex dynamics (e.g., limit cycles, chaos) but is differentiable.
 
-gLV can also be written in discrete-time equations:
+The gLV differential equation can also be approached in discrete-time using the Euler method:
 
 $$
 x^{t+1} = x^t + \Delta t \cdot D(x^t) (r + M x^t)
