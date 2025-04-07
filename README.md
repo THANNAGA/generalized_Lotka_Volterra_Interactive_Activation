@@ -52,7 +52,7 @@ $$
 
 Here, $x_i(t)$ represents the state variable as a function of continuous time $t$.
 
-**Limitations**: IA's dual equations and ReLU non-linearity make it non-differentiable and analytically intractable, complicating stability analysis and weight optimization.
+**Limitations**: IA's dual equations and ReLU non-linearity make it difficult to analyze --although it is still differentiable in practice. In particular, the stability analysis
 
 ### Generalized Lotka-Volterra (gLV)
 Rooted in theoretical ecology (Lotka, 1920; Volterra, 1926), gLV models population dynamics with cooperation and competition:
