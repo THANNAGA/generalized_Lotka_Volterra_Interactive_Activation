@@ -52,7 +52,7 @@ $$
 
 Here, $x_i(t)$ represents the state variable as a function of continuous time $t$.
 
-**Limitations**: IA's dual equations and ReLU non-linearity make it difficult to analyze --although it is still differentiable in practice. In particular, the stability analysis
+**Limitations**: IA's dual equations and ReLU non-linearity make it difficult to analyze --although it is still differentiable in practice. Specifically, equilibria and stability conditions for all units cannot be written down because of a circular dependency on their net input.
 
 ### Generalized Lotka-Volterra (gLV)
 Rooted in theoretical ecology (Lotka, 1920; Volterra, 1926), gLV models population dynamics with cooperation and competition:
@@ -146,6 +146,6 @@ We also present results in the discrete case, i.e. when the gLIA and IA equation
 *All models and analyses for the discrete case can be found in the notebook* [gLIA_discrete.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/680327090e751be220a3eb1ef2db82d742da12bd/gLIA_discrete.ipynb)
 
 - **Key Findings - Discrete case**:
-  - gLIA scales to at least 1,000 words, with symmetric and negative definite variants outperforming others.
-  - IA degrades significantly beyond 200 words.
-  - Symmetric gLIA with negative definite $M$ is globally stable, admitting a Lyapunov function:
+  - gLIA scales to at least 1,000 words, with the standard version sharply dominating.
+  - All other gLIA models degrade significantly beyond 100 words.
+  - IA is essentially at chance except for 500 words
