@@ -169,5 +169,5 @@ Finally we present results for a deep network consisting of a ResNet backbone an
 *All models and analyses for the discrete case can be found in the notebook* [gLIA_words2.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_words2.ipynb)
 
 - **Key Findings - 32x64 word images**:
-  - gLIA (generic version) performs reasonably well on 1,000 words.
-  - IA learns the task comparably well with more training epochs
+  - IA outperforms generic gLIA for all lexicon sizes
+  - gLIA still performs reasonably well on 1,000 words.
