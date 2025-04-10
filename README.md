@@ -81,11 +81,13 @@ gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\t
 ## Methods
 
 ### Task
-We model a two-level lexical system (letters and words) for word recognition, using the "Google 10,000 English" dataset (words ≥ 3 letters). A word is recognized if its unit is the most active after 50 time steps given its constituent letters.
+We train our models on a word recognition task. We first model a toy lexical system with only 2 levels, letters and words, with the wod level using up to 1000 one-hot coded words taken from the "Google 10,000 English" dataset (words ≥ 3 letters). A word is recognized if its unit is the most active after 50 time steps given its constituent letters (letter/position coding). 
+
+We then consider a deeper model built from a resnet backbone that is capped with a gLIA network, and trained on a custom made dataset of visual words with inputs images of 32x64 pixels, where words appear at different locations.
 
 ### Training
 we train gLIA as a dynamical classifier:
-- **Input**: Letter-position vectors with Gaussian noise (100 samples/word).
+- **Input**: Letter-position vectors with Gaussian noise for the toy models), Tensors of shape bx3x32x64  for the resnet-based models.
 - **Target**: One-hot word vectors.
 - **Loss**: Mean Squared Error (MSE).
 - **Optimizer**: Adam with stability regularization (sum of positive eigenvalue real parts).
@@ -149,3 +151,18 @@ We also present results in the discrete case, i.e. when the gLIA and IA equation
   - gLIA scales to at least 1,000 words, with the standard version sharply dominating.
   - All other gLIA models degrade significantly beyond 100 words.
   - IA is essentially at chance except for 500 words
+
+
+## Results: working with pixels
+
+Finally we present results for a deep network consisting of a ResNet backbone and a gLIA head, trained to recognize 32x64 images of words.
+
+| Words | Total Samples | Total trainable Parameters | Test Acc. (%) gLIA | 
+|-------|----------|------------|---------------------|
+| 10 | 1000 | 217646 | 100.00  |
+| 20 | 2000 | 219876 | 96.25  |
+| 30 | 3000 | 222306 | 98.33  |
+| 100 | 10000 | 244916 | 95.45  |
+| 200 | 20000 | 294216 | 65.08  |
+| 500 | 50000 | 562116 | 17.37  |
+| 1000 | 100000 | 1408616 | 84.67  |
