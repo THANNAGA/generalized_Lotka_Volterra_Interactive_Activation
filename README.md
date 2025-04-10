@@ -29,7 +29,7 @@ $$
 \text{sign}(M_{ij}) = \text{sign}(M_{ji})
 $$
 
-enabling cooperation or competition. The dynamics are:
+enforcing either mutual cooperation or mutual competition. The dynamics are:
 
 $$
 x_i^{t+1} = \begin{cases}
@@ -51,7 +51,7 @@ $$
 
 Here, $x_i(t)$ represents the state variable as a function of continuous time $t$.
 
-**Limitations**: IA's dual equations and ReLU non-linearity make it difficult to analyze --although it is still differentiable in practice. Specifically, equilibria and stability conditions for all units cannot be written down because of a circular dependency on their net input.
+**Limitations**: IA's dual equations and ReLU non-linearity make it difficult to analyze --although it is still differentiable in practice. Specifically, equilibria and stability conditions for an activation state across units cannot be written down because of a circular dependency on the net input to these units.
 
 ### Generalized Lotka-Volterra (gLV)
 Rooted in theoretical ecology (Lotka, 1920; Volterra, 1926), gLV models population dynamics with cooperation and competition:
