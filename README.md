@@ -166,3 +166,9 @@ Finally we present results for a deep network consisting of a ResNet backbone an
 | 200 | 20000 | 294216 | 65.08  |
 | 500 | 50000 | 562116 | 17.37  |
 | 1000 | 100000 | 1408616 | 84.67  |
+
+*All models and analyses for the discrete case can be found in the notebook* [gLIA_words2.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_words2.ipynb)
+
+- **Key Findings - 32x64 word images**:
+  - gLIA (generic version) performs reasonably well on 1,000 words.
+  - IA is essentially at chance except for 500 words
