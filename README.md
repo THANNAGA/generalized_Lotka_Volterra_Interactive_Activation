@@ -171,4 +171,4 @@ Finally we present results for a deep network consisting of a ResNet backbone an
 
 - **Key Findings - 32x64 word images**:
   - gLIA (generic version) performs reasonably well on 1,000 words.
-  - IA is essentially at chance except for 500 words
+  - IA learns the task comparably well with more training epochs
