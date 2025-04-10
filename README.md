@@ -75,7 +75,7 @@ Where:
 - $r$ and $M$ are constants or parameters.
 
 ### gLIA: Combining IA and gLV
-gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\text{sign}(M_{ij}) = \text{sign}(M_{ji})$. It aims to retain IA's cognitive relevance while leveraging gLV's trainability and stability properties.
+gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\text{sign}(M_{ij}) = \text{sign}(M_{ji})$. It aims to retain IA's cognitive relevance while simplifying its dynamics.
 
 ## Methods
 
