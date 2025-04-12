@@ -156,18 +156,18 @@ We also present results in the discrete case, i.e. when the gLIA and IA equation
 
 Finally we present results for a deep network consisting of a ResNet backbone and a gLIA head, trained to recognize 32x64 images of words.
 
-| Words | Total Samples | Parameters | Test Acc. (%) gLIA | Test Acc. (%) IA |
-|-------|----------|------------|---------------------|---------------------|
-| 10 | 1000 | 217646 | 100.00 | 100.00 |
-| 20 | 2000 | 219876 | 96.25 | 100.00 |
-| 30 | 3000 | 222306 | 98.33 | 100.00 |
-| 100 | 10000 | 244916 | 99.15 | 99.85 |
-| 200 | 20000 | 294216 | 72.52 | 96.97 |
-| 500 | 50000 | 562116 | 93.59 | 94.15 |
-| 1000 | 100000 | 1408616 | 90.96 | 97.92 |
+| Words | Total Samples | Parameters | Test Acc. (%) gLIA | Test Acc. (%) gLIA Sym. | Test Acc. (%) gLIA Neg. Def. | Test Acc. (%) IA |
+|-------|----------|------------|---------------------|---------------------|-------------------------|------------------------------|
+| 10 | 1000 | 217646 | 100.00  | 100.00 | 100.00 | 100.00 |
+| 20 | 2000 | 219876 | 96.25  | 100.00 | 100.00 | 100.00 |
+| 30 | 3000 | 222306 | 98.33  | 100.00 | 100.00 | 100.00 |
+| 100 | 10000 | 244916 | 99.15  | 100.00 | 100.00 | 99.85 |
+| 200 | 20000 | 294216 | 72.52  | 100.00 | 100.00 | 96.97 |
+| 500 | 50000 | 562116 | 93.59  | 99.74 | 99.74 | 94.15 |
+| 1000 | 100000 | 1408616 | 90.96  | 99.30 | 99.30 | 97.92 |
 
-*All models and analyses for the discrete case can be found in the notebook* [gLIA_words2.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_words2.ipynb)
+*All models and analyses for word images can be found in the notebook* [gLIA_words2.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_words2.ipynb)
 
 - **Key Findings - 32x64 word images**:
-  - IA outperforms generic gLIA for all lexicon sizes
-  - gLIA still performs reasonably well on 1,000 words.
+  - gLIA learns with high acuracy at least 1000 words in 20 epochs of training.
+  - IA also performs comparably well though needs more epochs.
