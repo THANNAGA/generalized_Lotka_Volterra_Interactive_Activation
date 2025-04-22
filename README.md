@@ -169,5 +169,5 @@ Finally we present results for a deep network consisting of a ResNet backbone an
 *All models and analyses for word images can be found in the notebook* [gLIA_words2.ipynb](https://github.com/THANNAGA/generalized_Lotka_Volterra_Interactive_Activation/blob/main/gLIA_words2.ipynb)
 
 - **Key Findings - 32x64 word images**:
-  - gLIA learns with high acuracy at least 1000 words in 20 epochs of training.
+  - gLIA can learn with high accuracy at least 1000 words in 20 epochs of training.
   - IA also performs comparably well though needs more epochs.
