@@ -68,11 +68,7 @@ $$
 x^{t+1} = x^t + \Delta t \cdot D(x^t) (r + M x^t)
 $$
 
-Where:
-- $x^t$ is the state variable at discrete time step $t$,
-- $\Delta t$ is the time step size,
-- $D(x^t)$ is a function of $x$ evaluated at $x^t$,
-- $r$ and $M$ are constants or parameters.
+Where, $x^t$ is now the state variable at discrete time step $t$, and $\Delta t$ is the time step size.
 
 ### gLIA: Combining IA and gLV
 gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\text{sign}(M_{ij}) = \text{sign}(M_{ji})$. It aims to retain IA's cognitive relevance while simplifying its dynamics.
