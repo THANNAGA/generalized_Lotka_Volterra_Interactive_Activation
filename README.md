@@ -76,7 +76,7 @@ gLIA uses gLV dynamics with IA's sign-symmetry constraint at initialization: $\t
 ## Methods
 
 ### Task
-We train our models on a word recognition task. We first model a toy lexical system with only 2 levels, letters and words, with the wod level using up to 1000 one-hot coded words taken from the "Google 10,000 English" dataset (words ≥ 3 letters). A word is recognized if its unit is the most active after 50 time steps given its constituent letters (letter/position coding). 
+We train our models on a word recognition task. We first model a toy lexical system with only 2 levels, letters and words, with the word level using up to 1000 one-hot coded words taken from the "Google 10,000 English" dataset (words ≥ 3 letters). A word is recognized if its unit is the most active after 50 time steps given its constituent letters (letter/position coding). 
 
 We then consider a deeper model built from a resnet backbone that is capped with a gLIA network, and trained on a custom made dataset of visual words with inputs images of 32x64 pixels, where words appear at different locations.
 
